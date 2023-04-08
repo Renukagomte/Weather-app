@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./weatherapp.css">
+    <link rel="manifest" href="manifest.json">
     <title>Weather App</title>
 </head>
 
@@ -55,7 +56,7 @@
             var res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b1af03e019a2a3c18d610fad217cbcc4&units=metric`)
             if (res.status === 404) {
                 document.querySelector(".error").style.display = "block"
-            }else{
+            } else {
                 document.querySelector(".error").style.display = "none"
             }
             var data = await res.json()
